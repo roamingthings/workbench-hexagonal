@@ -23,11 +23,10 @@ class CreateExpenseIT {
 
         val requestResponse = mockMvc.perform(post("http://localhost/expenses")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("""
-                    {
-                        "description": "Lorem Ipsum Description"
-                    }
-                """.trimIndent())
+                .content(
+                    """{
+                          "description": "Lorem Ipsum Description"
+                       }""".trimIndent())
         )
 
         requestResponse.andExpect(status().isCreated)
